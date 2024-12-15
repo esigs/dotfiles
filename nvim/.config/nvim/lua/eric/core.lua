@@ -15,3 +15,8 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 
 vim.opt.clipboard = "unnamedplus"
+
+vim.api.nvim_set_keymap("n", "p", '"+p', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "P", '"+P', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "p", '"+p', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "P", '"+P', { noremap = true, silent = true })
