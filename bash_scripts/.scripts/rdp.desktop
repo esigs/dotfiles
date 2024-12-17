@@ -1,0 +1,7 @@
+item=$(bw get item DESKTOP-E4QIU0F)
+
+name=$(echo "$item" | jq -r '.login.username')
+password=$(echo "$item" | jq -r '.login.password')
+computer=$(echo "$item" | jq -r '.notes')
+
+remmina -c "rdp://$name:$password@$computer"
