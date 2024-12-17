@@ -5,9 +5,11 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-if [ -d "$HOME/.scripts" ]; then
-	export PATH="$HOME/.scripts:$PATH"
-fi
+for dir in "$HOME/.scripts" "$HOME/.bin"; do
+    if [ -d "$dir" ] ; then
+        export PATH="$dir":$PATH
+    fi
+done
 
 alias ls='ls -la --color=auto'
 alias grep='grep --color=auto'
