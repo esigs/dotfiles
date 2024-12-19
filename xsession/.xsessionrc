@@ -1,0 +1,5 @@
+for dir in "$HOME/.scripts" "$HOME/.bin"; do
+    if [ -d "$dir" ] ; then
+        export PATH="$dir":$PATH
+    fi
+done
