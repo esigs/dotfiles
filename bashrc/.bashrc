@@ -21,7 +21,6 @@ alias grep='grep --color=auto'
 
 PS1='[\u@\h \W]\$ '
 
-# Screenshot tool
-pgrep -x flameshot > /dev/null || flameshot &
-
 export PATH="$PATH:/home/e/.dotnet/tools"
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
