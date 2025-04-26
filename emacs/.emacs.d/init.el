@@ -48,4 +48,8 @@
   :config
   (which-key-mode))
 
-
+(use-package gptel
+  :ensure t
+  :config
+  (add-hook 'gptel-post-stream-hook 'gptel-auto-scroll)
+  )
