@@ -40,7 +40,9 @@
 
 ;; Clojure REPL integration
 (use-package cider
-  :ensure t)
+  :ensure t
+  :config
+  (setq cider-result-overlay-position 'at-point))
 
 ;; Easy navigation and key binds
 (use-package which-key
