@@ -41,3 +41,11 @@
 ;; Clojure REPL integration
 (use-package cider
   :ensure t)
+
+;; Easy navigation and key binds
+(use-package which-key
+  :ensure t
+  :config
+  (which-key-mode))
+
+
