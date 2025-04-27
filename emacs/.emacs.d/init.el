@@ -12,6 +12,9 @@
 (setq auto-save-default nil)
 (setq create-lockfiles nil)
 
+(windmove-default-keybindings)
+
+
 ;; Packages
 (require 'package)
 
