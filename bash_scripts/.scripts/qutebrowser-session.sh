@@ -12,4 +12,3 @@ exec qutebrowser \
     --basedir "$BASEDIR" \
     --config-py "$HOME/.config/qutebrowser/config.py" \
     --set window.title_format "{perc}$SESSION{title_sep}{current_title}" "$URL"
-#exec qutebrowser --basedir "$BASEDIR"
