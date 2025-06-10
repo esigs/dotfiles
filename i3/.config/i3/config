@@ -192,3 +192,5 @@ bindsym Print exec flameshot gui
 bindsym $mod+F12 exec ~/.scripts/laptop.sh
 bindsym $mod+F11 exec ~/.scripts/desk.sh
 
+bindsym $mod+b exec ~/.scripts/qutebrowser-session.sh
+
