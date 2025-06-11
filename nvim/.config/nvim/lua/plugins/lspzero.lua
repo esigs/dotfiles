@@ -39,29 +39,33 @@ return {
       -- Example language servers
       require('lspconfig').gleam.setup({})
       require('lspconfig').ocamllsp.setup({})
-      require('lspconfig').csharp_ls.setup{}
-    end,
-  },
-  {
-    'hrsh7th/nvim-cmp',
-    dependencies = {
-      'hrsh7th/cmp-nvim-lsp',
+      require('lspconfig').csharp_ls.setup {
+                filetypes = { 'cs' },
+                cmd = { "csharp-ls" },
+                root_dir = require('lspconfig').util.root_pattern("*.csproj", "*.sln"),
+            }
+        end,
     },
-    config = function()
-      local cmp = require('cmp')
+    {
+        'hrsh7th/nvim-cmp',
+        dependencies = {
+            'hrsh7th/cmp-nvim-lsp',
+        },
+        config = function()
+            local cmp = require('cmp')
 
-      cmp.setup({
-        sources = {
-          { name = 'nvim_lsp' },
-        },
-        snippet = {
-          expand = function(args)
-            -- You need Neovim v0.10+ to use vim.snippet
-            vim.snippet.expand(args.body)
-          end,
-        },
-        mapping = cmp.mapping.preset.insert({}),
-      })
-    end,
-  },
+            cmp.setup({
+                sources = {
+                    { name = 'nvim_lsp' },
+                },
+                snippet = {
+                    expand = function(args)
+                        -- You need Neovim v0.10+ to use vim.snippet
+                        vim.snippet.expand(args.body)
+                    end,
+                },
+                mapping = cmp.mapping.preset.insert({}),
+            })
+        end,
+    },
 }

@@ -11,16 +11,9 @@ for dir in "$HOME/.scripts" "$HOME/.bin"; do
     fi
 done
 
-rubydir="/home/e/.local/share/gem/ruby/3.3.0/bin"
-
-export PATH="$rubydir:$PATH"
-
 alias ls='ls -la --color=auto'
 alias grep='grep --color=auto'
 
-
 PS1='[\u@\h \W]\$ '
 
-export PATH="$PATH:/home/e/.dotnet/tools"
-export DOTNET_ROOT=$HOME/.dotnet
-export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
+export GIT_SSH_COMMAND="ssh -i ~/.ssh/id_ed25519"
