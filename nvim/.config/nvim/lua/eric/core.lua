@@ -22,7 +22,6 @@ end, {['repeat'] = -1})
 
 vim.opt.clipboard = "unnamedplus"
 
-vim.api.nvim_set_keymap("n", "p", '"+p', { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "P", '"+P', { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "p", '"+p', { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "P", '"+P', { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "y", '"*y', { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "p", '"*p', { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "P", '"*P', { noremap = true, silent = true })
