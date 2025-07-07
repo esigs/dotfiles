@@ -1,5 +1,5 @@
 #!/bin/sh
-SESSION=$(printf "raw\nbd-admin\nbd-user\npersonal" | rofi -dmenu -p "Qute session:")
+SESSION=$(printf "raw\nbd-admin\nbd-user\npersonal\nyoutube\nshoping" | rofi -dmenu -p "Qute session:")
 [ -z "$SESSION" ] && exit
 
 BASEDIR="$HOME/.config/qutebrowser/sessions/$SESSION"

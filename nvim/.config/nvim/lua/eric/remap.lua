@@ -8,3 +8,5 @@ vim.keymap.set("n", "Q", "<nop>")
 
 vim.g.maplocalleader = ","
 
+vim.keymap.set("n", "<leader>r", ":checktime<CR>")
+

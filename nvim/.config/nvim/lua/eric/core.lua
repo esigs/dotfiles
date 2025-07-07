@@ -14,6 +14,12 @@ vim.opt.colorcolumn = "80"
 vim.opt.swapfile = false
 vim.opt.backup = false
 
+vim.o.autoread = true
+-- Automatically check for file changes every second
+vim.fn.timer_start(1000, function()
+  vim.api.nvim_command('checktime')
+end, {['repeat'] = -1})
+
 vim.opt.clipboard = "unnamedplus"
 
 vim.api.nvim_set_keymap("n", "p", '"+p', { noremap = true, silent = true })
