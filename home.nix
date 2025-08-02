@@ -30,6 +30,7 @@
       core.editor = "nvim";
       gpg.format = "ssh";
       commit.gpgsign = true;
+      gpg.ssh.allowedSignersFile = "/home/${userConfig.username}/.ssh/allowed_signers";
     };
   };
 }
