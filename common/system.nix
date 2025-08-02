@@ -21,10 +21,24 @@
 
   services.xserver = {
     enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
+    displayManager = {
+      lightdm.enable = true;
+      defaultSession = "none+i3";
+    };
+
+    windowManager.i3.enable = true;
     xkb.layout = "us";
   };
+
+  environment.systemPackages = with pkgs; [
+    dmenu         # simple launcher 
+    feh           # for wallpapers
+    lxappearance  # GUI to set GTK themes
+    networkmanagerapplet  # tray for Wi-Fi
+    brightnessctl # brightness key support
+    xss-lock      # for screen locking
+    i3lock        # lock screen
+  ];
 
   services.pipewire = {
     enable = true;
@@ -35,6 +49,11 @@
 
   security.rtkit.enable = true;
   services.printing.enable = true;
+
+  # power management
+  services.upower.enable = true;
+  services.power-profiles-daemon.enable = true;
+  security.polkit.enable = true;
 
   system.stateVersion = "25.05";
 }
