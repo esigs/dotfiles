@@ -2,11 +2,13 @@
 
 {
   environment.systemPackages = with pkgs; [
-    git
-    tmux
     curl
+    git
     htop
+    tree
+    tmux
     unzip
+    xclip
     zip
   ];
 }
