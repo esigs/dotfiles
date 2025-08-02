@@ -2,7 +2,13 @@
 {
   home.stateVersion = "25.05"; # required for home-manager
   home.sessionVariables.EDITOR = "nvim";
-  imports = [ inputs.nixvim.homeManagerModules.nixvim ];
+  imports = [ 
+    inputs.nixvim.homeManagerModules.nixvim
+    ./modules/i3.nix
+  ];
+
+  programs.home-manager.enable = true;
+
   programs.nixvim = {
     enable = true;
 

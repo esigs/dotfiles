@@ -30,16 +30,6 @@
     xkb.layout = "us";
   };
 
-  environment.systemPackages = with pkgs; [
-    dmenu         # simple launcher 
-    feh           # for wallpapers
-    lxappearance  # GUI to set GTK themes
-    networkmanagerapplet  # tray for Wi-Fi
-    brightnessctl # brightness key support
-    xss-lock      # for screen locking
-    i3lock        # lock screen
-  ];
-
   services.pipewire = {
     enable = true;
     alsa.enable = true;
