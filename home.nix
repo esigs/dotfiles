@@ -28,6 +28,8 @@
       init.defaultBranch = "main";
       user.signingKey = userConfig.sshPublicKey;
       core.editor = "nvim";
+      gpg.format = "ssh";
+      commit.gpgsign = true;
     };
   };
 }
