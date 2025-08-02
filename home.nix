@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, userConfig, ... }:
 {
   home.stateVersion = "25.05"; # required for home-manager
   home.sessionVariables.EDITOR = "nvim";
@@ -15,13 +15,19 @@
     clipboard = {
       register = "unnamedplus"; # Uses system clipboard
       providers.xclip.enable = true; 
-      };
-
     };
 
-    programs.git = {
-      enable = true;
-      userName = "Eric Sigurdson";
-      userEmail = "eric.sigurdson@example.com";
+  };
+
+  programs.git = {
+    enable = true;
+
+    extraConfig = {
+      user.name = userConfig.username;
+      user.email = userConfig.email;
+      init.defaultBranch = "main";
+      user.signingKey = userConfig.sshPublicKey;
+      core.editor = "nvim";
     };
-  }
+  };
+}

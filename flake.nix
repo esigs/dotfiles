@@ -18,6 +18,11 @@
   outputs = { self, nixpkgs, home-manager, nixvim, ... } @ inputs:
     let
       username = "erics";
+      userConfig = {
+        username = username;
+        email = "eric@ericsigurdson.com";
+        sshPublicKey =  "/home/${username}/.ssh/id_ed25519.pub";
+      };
       userModule = { ... }: { _module.args.username = username; };
 
       mkHost = name: path:
@@ -31,7 +36,7 @@
             {
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = {
-                inherit inputs username;
+                inherit inputs username userConfig;
               };
               home-manager.users.${username} = import ./home.nix;
             }
