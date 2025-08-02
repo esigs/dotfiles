@@ -10,5 +10,6 @@
     unzip
     xclip
     zip
+    alacritty
   ];
 }
